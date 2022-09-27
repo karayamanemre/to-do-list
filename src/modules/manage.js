@@ -2,7 +2,7 @@ import dotsIcon from '../icons/dots.png';
 
 const icon3 = new Image();
 icon3.src = dotsIcon;
-let toDos = [];
+const toDos = [];
 
 export default class ToDo {
   constructor(todo) {
@@ -75,7 +75,7 @@ export default class ToDo {
     const taskItems = document.querySelectorAll('.task-item');
     taskItems.forEach((item) => {
       item.addEventListener('click', () => {
-      item.setAttribute('contenteditable', 'true');
+        item.setAttribute('contenteditable', 'true');
       });
       item.addEventListener('focusout', () => {
         const toDos = JSON.parse(localStorage.getItem('toDos') || '[]');
@@ -89,5 +89,3 @@ export default class ToDo {
     });
   }
 }
-
-      
