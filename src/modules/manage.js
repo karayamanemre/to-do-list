@@ -1,7 +1,7 @@
-import dotsIcon from '../icons/dots.png';
+import removeIcon from '../icons/remove.png';
 
 const icon3 = new Image();
-icon3.src = dotsIcon;
+icon3.src = removeIcon;
 const toDos = [];
 
 export default class ToDo {
@@ -48,7 +48,7 @@ export default class ToDo {
             <input id="${task.index}" class="task-item" value="${task.description}">
           </div>
           <span id="item-icon">
-            <img src="${icon3.src}" class="remove" id="${task.id}">
+            <img src="${icon3.src}" class="remove" id="${task.id}" alt="Remove Task" title="Remove Task">
           </span>
         </li>
         `;
@@ -76,9 +76,11 @@ export default class ToDo {
     taskItems.forEach((item) => {
       item.addEventListener('click', () => {
         item.setAttribute('contenteditable', 'true');
+        item.style.background = '#ddd';
       });
       item.addEventListener('focusout', () => {
         const toDos = JSON.parse(localStorage.getItem('toDos') || '[]');
+        item.style.background = 'none';
         toDos.forEach((obj) => {
           if (obj.index.toString() === item.id) {
             obj.description = item.value;

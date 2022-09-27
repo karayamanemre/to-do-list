@@ -7,10 +7,12 @@ const titleSpan = document.getElementById('title-icon');
 const addSpan = document.getElementById('add-icon');
 const icon1 = new Image();
 icon1.src = titleIcon;
+icon1.classList.add('reset');
 const icon2 = new Image();
 icon2.src = addIcon;
 titleSpan.appendChild(icon1);
 addSpan.appendChild(icon2);
+
 
 ToDo.add();
 ToDo.show();
