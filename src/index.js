@@ -1,14 +1,15 @@
-import _ from 'lodash';
 import './style.css';
+import titleIcon from './icons/refresh.png';
+import addIcon from './icons/add.png';
+import showList from './modules/showList.js';
 
-function component() {
-  const element = document.createElement('div');
+showList();
 
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
-
-  return element;
-}
-
-document.body.appendChild(component());
+const titleSpan = document.getElementById('title-icon');
+const addSpan = document.getElementById('add-icon');
+const icon1 = new Image();
+icon1.src = titleIcon;
+const icon2 = new Image();
+icon2.src = addIcon;
+titleSpan.appendChild(icon1);
+addSpan.appendChild(icon2);
