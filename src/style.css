@@ -8,14 +8,27 @@
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: #000;
+}
+
 main {
-  width: 500px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
   margin: 100px auto;
-  border: 1px solid #ddd;
+  align-items: center;
+}
+
+section {
+  width: 400px;
+  border: 3px solid #ddd;
+  border-radius: 20px;
 }
 
 h1 {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 #list-title {
@@ -23,9 +36,9 @@ h1 {
   align-items: center;
   justify-content: space-between;
   background-color: #ddd;
-  border-bottom: 1px solid #ddd;
   height: 50px;
-  padding: 0 15px;
+  padding: 0 10px;
+  border-radius: 16px 16px 0 0;
 }
 
 #title-icon,
@@ -38,12 +51,12 @@ h1 {
 }
 
 #input-area {
-  height: 40px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #ddd;
-  padding: 0 15px;
+  border-bottom: 2px solid #ddd;
+  padding: 0 10px;
 }
 
 ::placeholder {
@@ -55,11 +68,12 @@ input {
   border: none;
 }
 
-label {
-  margin-left: 10px;
+.task-item {
+  margin-left: 5px;
+  font-size: 14px;
 }
 
-input:checked + label {
+input:checked + .task-item {
   text-decoration: line-through;
 }
 
@@ -67,9 +81,9 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 2px solid #ddd;
   height: 50px;
-  padding: 0 15px;
+  padding: 0 10px;
 }
 
 .item-info {
@@ -78,17 +92,18 @@ li {
 }
 
 .bottom {
-  height: 55px;
+  display: flex;
+  height: 50px;
   background-color: #ddd;
-  text-align: center;
-  padding: 20px;
-}
-
-#clear {
-  font-size: 15px;
-  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 16px 16px;
 }
 
 #clear:hover {
   text-decoration: underline;
+}
+
+.alert {
+  margin: 10px 0;
 }
