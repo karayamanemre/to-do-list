@@ -90,10 +90,9 @@ input {
   width: 90%;
 }
 
-.task-item {
-  margin-left: 5px;
-  font-size: 16px;
-  width: 100%;
+input[type=checkbox] {
+  accent-color: #37f599;
+  margin-right: 10px;
 }
 
 input:checked + .task-item {
