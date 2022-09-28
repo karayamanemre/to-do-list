@@ -100,7 +100,7 @@ export default class ToDo {
     const clearButton = document.getElementById('clear');
     clearButton.addEventListener('click', (e) => {
       e.preventDefault();
-      let toDos = JSON.parse(localStorage.getItem('toDos') || '[]');;
+      let toDos = JSON.parse(localStorage.getItem('toDos') || '[]');
       toDos = toDos.filter((task) => task.completed === false);
       localStorage.setItem('toDos', JSON.stringify(toDos));
       window.location.reload();
@@ -111,17 +111,19 @@ export default class ToDo {
     const resetButton = document.querySelector('.reset');
     const alert = document.querySelector('.alert');
     let toDos = JSON.parse(localStorage.getItem('toDos') || '[]');
-    resetButton.addEventListener('click', (e) => {
-      if (toDos == '') {
+    resetButton.addEventListener('click', () => {
+      if (toDos === '') {
         alert.innerText = 'List is empty.';
         alert.style.display = 'flex';
       } else {
+        /* eslint-disable */
         if (confirm('List will be cleared. Are you sure?')) {
+          /* eslint-enable */
           toDos = [];
           localStorage.setItem('toDos', JSON.stringify(toDos));
           window.location.reload();
-        };
-      };
+        }
+      }
     });
   }
 }
