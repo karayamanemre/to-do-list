@@ -24,7 +24,8 @@ main {
   margin: 100px auto;
   align-items: center;
 }
-/* eslint-disable */
+
+/* stylelint-disable */
 section {
   width: 500px;
   padding: 10px;
@@ -34,7 +35,7 @@ section {
   box-shadow: -16px 16px 32px #7d7e82,
   16px -16px 32px #fff;
 }
-/* eslint-enable */
+/* stylelint-enable */
 h1 {
   font-size: 24px;
 }
@@ -135,12 +136,12 @@ li {
   font-weight: 700;
   margin: 15px 0;
 }
-/* eslint-disable */
+/* stylelint-disable */
 .reset:hover {
   -webkit-animation: rotate-center 0.6s ease-in-out both;
   animation: rotate-center 0.6s ease-in-out both;
 }
-/* eslint-enable */
+/* stylelint-enable */
 @-webkit-keyframes rotate-center {
   0% {
     -webkit-transform: rotate(0);
@@ -153,7 +154,7 @@ li {
   }
 }
 @keyframes rotate-center {
-  
+
   0% {
     -webkit-transform: rotate(0);
     transform: rotate(0);
