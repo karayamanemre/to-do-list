@@ -23,8 +23,8 @@ export default class ToDo {
       if (doInput.value !== '') {
         const newTask = new ToDo(doInput.value);
         toDos.push(newTask);
-        toDos.forEach((obj, i) => {
-          obj.index = i + 1;
+        toDos.forEach((task, i) => {
+          task.index = i + 1;
         });
         localStorage.setItem('toDos', JSON.stringify(toDos));
         doInput.value = '';
@@ -39,21 +39,26 @@ export default class ToDo {
   static show() {
     const todoList = document.getElementById('do-list');
     const toDos = JSON.parse(localStorage.getItem('toDos') || '[]');
-    if (toDos.length > 0) {
-      toDos.forEach((task) => {
-        todoList.innerHTML += `
-        <li>
-          <div class="item-info">
-            <input type="checkbox">
-            <input id="${task.index}" class="task-item" value="${task.description}">
-          </div>
-          <span id="item-icon">
-            <img src="${icon3.src}" class="remove" id="${task.id}" alt="Remove Task" title="Remove Task">
-          </span>
-        </li>
-        `;
-      });
-    }
+    let inputCheck = '';
+    todoList.innerHTML = '';
+    toDos.forEach((task) => {
+      if (task.completed === false) {
+        inputCheck = '';
+      } else {
+        inputCheck = 'checked';
+      }
+      todoList.innerHTML += `
+      <li>
+        <div class="item-info">
+          <input ${inputCheck} type="checkbox" class="check" id="input${task.index}">
+          <input id="${task.index}" class="task-item" value="${task.description}">
+        </div>
+        <span id="item-icon">
+          <img src="${icon3.src}" class="remove" id="${task.id}" alt="Remove Task" title="Remove Task">
+        </span>
+      </li>
+      `;
+    });
   }
 
   static remove() {
@@ -62,8 +67,8 @@ export default class ToDo {
       icon.addEventListener('click', (e) => {
         let toDos = JSON.parse(localStorage.getItem('toDos') || '[]');
         toDos = toDos.filter((task) => task.id !== e.target.id);
-        toDos.forEach((obj, i) => {
-          obj.index = i + 1;
+        toDos.forEach((task, i) => {
+          task.index = i + 1;
         });
         localStorage.setItem('toDos', JSON.stringify(toDos));
         window.location.reload();
@@ -75,19 +80,48 @@ export default class ToDo {
     const taskItems = document.querySelectorAll('.task-item');
     taskItems.forEach((item) => {
       item.addEventListener('click', () => {
-        item.setAttribute('contenteditable', 'true');
         item.style.background = '#ddd';
+        item.setAttribute('contenteditable', 'true');
       });
       item.addEventListener('focusout', () => {
         const toDos = JSON.parse(localStorage.getItem('toDos') || '[]');
         item.style.background = 'none';
-        toDos.forEach((obj) => {
-          if (obj.index.toString() === item.id) {
-            obj.description = item.value;
+        toDos.forEach((task) => {
+          if (task.index.toString() === item.id) {
+            task.description = item.value;
             localStorage.setItem('toDos', JSON.stringify(toDos));
           }
         });
       });
+    });
+  }
+
+  static clear() {
+    const clearButton = document.getElementById('clear');
+    clearButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      let toDos = JSON.parse(localStorage.getItem('toDos') || '[]');;
+      toDos = toDos.filter((task) => task.completed === false);
+      localStorage.setItem('toDos', JSON.stringify(toDos));
+      window.location.reload();
+    });
+  }
+
+  static reset() {
+    const resetButton = document.querySelector('.reset');
+    const alert = document.querySelector('.alert');
+    let toDos = JSON.parse(localStorage.getItem('toDos') || '[]');
+    resetButton.addEventListener('click', (e) => {
+      if (toDos == '') {
+        alert.innerText = 'List is empty.';
+        alert.style.display = 'flex';
+      } else {
+        if (confirm('List will be cleared. Are you sure?')) {
+          toDos = [];
+          localStorage.setItem('toDos', JSON.stringify(toDos));
+          window.location.reload();
+        };
+      };
     });
   }
 }
