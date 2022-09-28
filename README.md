@@ -2,7 +2,7 @@
 
 # ToDo List
 
-> 
+> A minimal "To-do list" app that helps to organize your day. It simply creates a list of the tasks you have to complete along with the option to check them off. Inspired by the minimalist website. That website is already offline but you can still play with thanks to [web.archive.org](https://web.archive.org/web/20180320194056/http://www.getminimalist.com:80/).
 
 ## Built With
 
@@ -13,7 +13,7 @@
 
 ## Live Demo
 
-[To-Do List](https://karayamanemre.github.io/to-do-list/)
+[To-Do List](https://karayamanemre.github.io/to-do-list/dist/)
 
 ## Getting Started
 
@@ -49,7 +49,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- 
+- Inspired by the [minimalist](https://web.archive.org/web/20180320194056/http://www.getminimalist.com:80/) website.
 
 ## 📝 License
 

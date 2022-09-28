@@ -112,11 +112,11 @@ export default class ToDo {
     const alert = document.querySelector('.alert');
     let toDos = JSON.parse(localStorage.getItem('toDos') || '[]');
     resetButton.addEventListener('click', () => {
-      if (toDos === '') {
+      /* eslint-disable */
+      if (toDos == '') {
         alert.innerText = 'List is empty.';
         alert.style.display = 'flex';
       } else {
-        /* eslint-disable */
         if (confirm('List will be cleared. Are you sure?')) {
           /* eslint-enable */
           toDos = [];
