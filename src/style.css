@@ -11,13 +11,13 @@
 }
 
 body {
-  background: #f9f8eb;
-  color: #cccbab;
+  background: #eee3cb;
+  color: #967e76;
 }
 
 a {
   text-decoration: none;
-  color: #cccbab;
+  color: #967e76;
 }
 
 main {
@@ -30,17 +30,14 @@ main {
 
 /* stylelint-disable */
 section {
-  width: 500px;
-  padding: 10px;
-  border: 5px solid #e8e9d2;
+  width: 475px;
+  padding: 5px 10px;
+  border: 5px solid #967e76;
   border-radius: 20px;
-  background: #f9f8eb;
-  box-shadow: -16px 16px 32px #bab9af;
+  background: #eee3cb;
+  box-shadow: -16px 16px 32px #967e76;
 }
 /* stylelint-enable */
-h1 {
-  font-size: 24px;
-}
 
 #list-title {
   display: flex;
@@ -49,8 +46,13 @@ h1 {
   height: 50px;
   padding: 0 10px;
   border-radius: 10px 10px 0 0;
-  border-bottom: 4px solid #cccbab;
+  border-bottom: 4px solid #967e76;
 }
+
+h1 {
+  font-size: 24px;
+}
+
 form {
   width: 100%;
   display: flex;
@@ -59,9 +61,12 @@ form {
   justify-content: space-between;
 }
 
+#title-icon,
 #add-icon {
   border: none;
   background: none;
+  display: flex;
+  align-items: center;
 }
 
 #title-icon,
@@ -73,7 +78,12 @@ form {
 
 #add-icon:hover,
 #item-icon:hover {
-  transform: translateY(2px);
+  transform: scale(1.1);
+}
+
+#item-icon {
+  display: flex;
+  align-items: center;
 }
 
 #input-area {
@@ -82,7 +92,7 @@ form {
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
-  border-bottom: 2px solid #cccbab;
+  border-bottom: 2px solid #967e76;
 }
 
 ::placeholder {
@@ -104,32 +114,29 @@ input {
   font-size: 16px;
 }
 
-input[type=checkbox] {
-  accent-color: #54bab9;
-  margin-right: 10px;
-}
-
 input:checked + .task-item {
   text-decoration: line-through;
 }
 
 input.check {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
+  accent-color: #54bab9;
+  margin-right: 10px;
 }
 
 .task-item {
   color: #54bab9;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: 50px;
   padding: 0 10px;
-  border-bottom: 2px solid #cccbab;
+  border-bottom: 2px solid #967e76;
 }
 
 .item-info {
@@ -143,11 +150,10 @@ li {
   height: 50px;
   align-items: center;
   justify-content: center;
-  border-radius: 0 0 10px 10px;
 }
 
 #clear {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
 }
 
