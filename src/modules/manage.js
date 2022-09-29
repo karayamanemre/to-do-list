@@ -14,10 +14,11 @@ export default class ToDo {
 
   static add() {
     const alert = document.querySelector('.alert');
-    const addIcon = document.getElementById('add-icon');
+    const inputForm = document.getElementById('input-form');
     const doInput = document.getElementById('do-input');
     alert.style.display = 'none';
-    addIcon.addEventListener('click', () => {
+    inputForm.addEventListener('submit', (e) => {
+      e.preventDefault();
       let toDos = [];
       toDos = JSON.parse(localStorage.getItem('toDos') || '[]');
       if (doInput.value !== '') {
@@ -49,10 +50,10 @@ export default class ToDo {
       }
       todoList.innerHTML += `
       <li>
-        <div class="item-info">
+        <span class="item-info">
           <input ${inputCheck} type="checkbox" class="check" id="input${task.index}">
           <input id="${task.index}" class="task-item" value="${task.description}">
-        </div>
+        </span>
         <span id="item-icon">
           <img src="${icon3.src}" class="remove" id="${task.id}" alt="Remove Task" title="Remove Task">
         </span>
@@ -80,7 +81,7 @@ export default class ToDo {
     const taskItems = document.querySelectorAll('.task-item');
     taskItems.forEach((item) => {
       item.addEventListener('click', () => {
-        item.style.background = '#ddd';
+        item.style.background = '#e8e9d2';
         item.setAttribute('contenteditable', 'true');
       });
       item.addEventListener('focusout', () => {

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Permanent+Marker&display=swap');
 
 *,
 *::before,
@@ -11,12 +11,13 @@
 }
 
 body {
-  background: #c0c2c8;
+  background: #f9f8eb;
+  color: #cccbab;
 }
 
 a {
   text-decoration: none;
-  color: #000;
+  color: #cccbab;
 }
 
 main {
@@ -31,11 +32,10 @@ main {
 section {
   width: 500px;
   padding: 10px;
-  border: 5px solid #000;
+  border: 5px solid #e8e9d2;
   border-radius: 20px;
-  background: linear-gradient(315deg, #cdd0d6, #adafb4);
-  box-shadow: -16px 16px 32px #7d7e82,
-  16px -16px 32px #fff;
+  background: #f9f8eb;
+  box-shadow: -16px 16px 32px #bab9af;
 }
 /* stylelint-enable */
 h1 {
@@ -49,7 +49,19 @@ h1 {
   height: 50px;
   padding: 0 10px;
   border-radius: 10px 10px 0 0;
-  border-bottom: 4px solid #000;
+  border-bottom: 4px solid #cccbab;
+}
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#add-icon {
+  border: none;
+  background: none;
 }
 
 #title-icon,
@@ -70,28 +82,30 @@ h1 {
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #cccbab;
 }
 
 ::placeholder {
   font-style: italic;
-  color: #000;
+  color: #54bab9;
   font-size: 16px;
 }
 
 input {
+  width: 90%;
+  color: #54bab9;
   outline: none;
   border: none;
   background: transparent;
-  font-size: 16px;
+  font-family: 'Permanent Marker', sans-serif;
 }
 
 #do-input {
-  width: 90%;
+  font-size: 16px;
 }
 
 input[type=checkbox] {
-  accent-color: #37f599;
+  accent-color: #54bab9;
   margin-right: 10px;
 }
 
@@ -99,13 +113,23 @@ input:checked + .task-item {
   text-decoration: line-through;
 }
 
+input.check {
+  width: 20px;
+  height: 20px;
+}
+
+.task-item {
+  color: #54bab9;
+  font-size: 24px;
+}
+
 li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 50px;
+  height: 60px;
   padding: 0 10px;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #cccbab;
 }
 
 .item-info {
@@ -132,7 +156,7 @@ li {
 }
 
 .alert {
-  color: #ff1e1e;
+  color: #d11919;
   font-size: 22px;
   font-weight: 700;
   margin: 25px 0;
