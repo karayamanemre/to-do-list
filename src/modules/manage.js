@@ -31,7 +31,7 @@ export default class ToDo {
         doInput.value = '';
         window.location.reload();
       } else {
-        alert.innerText = 'You have to do something!';
+        alert.innerText = 'You have to DO something!';
         alert.style.display = 'flex';
       }
     });
