@@ -4,6 +4,7 @@ import addIcon from './icons/add.png';
 import ToDo from './modules/manage.js';
 import check from './modules/check.js';
 
+const doInput = document.getElementById('do-input');
 const titleSpan = document.getElementById('title-icon');
 const addSpan = document.getElementById('add-icon');
 const icon1 = new Image();
@@ -13,6 +14,7 @@ const icon2 = new Image();
 icon2.src = addIcon;
 titleSpan.appendChild(icon1);
 addSpan.appendChild(icon2);
+doInput.focus();
 
 ToDo.add();
 ToDo.show();
