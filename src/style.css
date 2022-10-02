@@ -23,14 +23,13 @@ a {
 main {
   display: flex;
   flex-direction: column;
-  width: 400px;
   margin: 100px auto;
   align-items: center;
 }
 
 /* stylelint-disable */
 section {
-  width: 475px;
+  width: 600px;
   padding: 5px 10px;
   border: 5px solid #967e76;
   border-radius: 20px;
@@ -195,5 +194,11 @@ li {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  section {
+    width: 375px;
   }
 }
