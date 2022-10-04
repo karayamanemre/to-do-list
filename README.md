@@ -28,6 +28,8 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 
    - To clone my repository run this command `git clone https://github.com/karayamanemre/to-do-list.git` 
+   - Run npm install to install the dependencies.
+   - Open the dist/index.html file with a browser.
 
 ## Authors
 
