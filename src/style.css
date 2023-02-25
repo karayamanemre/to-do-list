@@ -1,3 +1,4 @@
+@import url('https://use.typekit.net/vus8zic.css');
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Permanent+Marker&display=swap');
 
 *,
@@ -5,13 +6,13 @@
 *::after {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  font-family: 'Courier Prime', sans-serif;
+  font-family: 'basic-sans', 'Courier Prime', sans-serif;
   margin: 0;
   padding: 0;
 }
 
 body {
-  background: #eee3cb;
+  background: #ddd;
   color: #967e76;
 }
 
@@ -33,7 +34,7 @@ section {
   padding: 5px 10px;
   border: 5px solid #967e76;
   border-radius: 20px;
-  background: #eee3cb;
+  background: #eee;
   box-shadow: -16px 16px 32px #967e76;
 }
 /* stylelint-enable */
